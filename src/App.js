@@ -9,7 +9,6 @@ function App() {
   const [isloading, setIsLoading] = useState(false);
 
   const fetchPhotos = async(pageNumber) => {
-    const access_key = "jQjPThuobtuvBg0YMT3jH-eDKjRPLaP8094CCWZPFOA"
     const res = await fetch(
       `https://api.unsplash.com/photos/?client_id=${access_key}&page=${pageNumber}&per_page=10`
       )
@@ -45,7 +44,7 @@ function App() {
         }
       },
       {threshold: true});
-      
+
       observer.observe(pageEnd.current);
     }
   },[isloading,num])
@@ -81,3 +80,7 @@ function App() {
 }
 
 export default App;
+
+
+
+// https://infinite-scrolling-react-hooks.herokuapp.com
